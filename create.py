@@ -2,10 +2,11 @@ import os
 import re
 import glob
 
-def remove_comments(string):
-    string = re.sub(re.compile("/\*.*?\*/",re.DOTALL ) ,"" ,string) # remove all occurrences streamed comments (/*COMMENT */) from string
-    string = re.sub(re.compile("//.*?\n" ) ,"" ,string) # remove all occurrence single-line comments (//COMMENT\n ) from string
-    return string
+class RemoveComments:
+
+    pass
+
+
 
 f1 = open("sample_folder/sample.txt", 'r+')
 
@@ -26,14 +27,7 @@ f1.close()
 
 
 
-# for txtFile in txtFiles:
-#     f = open(txtFile, 'r+')
-#     file_content = str(f.read())
-#     print("File Content : ", str(file_content))
 
-#     # replacing comments with spaces
-#     file_content = remove_comments(file_content)
-#     f.write(file_content)
 
 # f.close()
 
