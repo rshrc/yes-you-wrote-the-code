@@ -1,28 +1,43 @@
 import os
+import re
 import glob
 
-os.system("touch sample_folder/file1.txt && touch sample_folder/file2.txt")
+def remove_comments(string):
+    string = re.sub(re.compile("/\*.*?\*/",re.DOTALL ) ,"" ,string) # remove all occurrences streamed comments (/*COMMENT */) from string
+    string = re.sub(re.compile("//.*?\n" ) ,"" ,string) # remove all occurrence single-line comments (//COMMENT\n ) from string
+    return string
 
-f1 = open("sample_folder/file1.txt", 'w')
-f2 = open("sample_folder/file2.txt", 'w')
-
-textList = ['data', '// comment']
+f1 = open("sample_folder/sample.txt", 'r+')
 
 # Opening all txtFiles
 txtFiles = glob.glob('**/*.txt', recursive=True)
 
-for line in textList:
-    f1.write(line)
-    f1.write("\n")
-    f2.write(line)
-    f2.write("\n")    
+file_content = str(f1.read()) 
+print(file_content)
+file_content = remove_comments(file_content)
+print(file_content)
 
-for txtFile in txtFiles:
-    f = open(txtFile, 'a+')
-    f.write("hey")
-f.close()
+f1.close()
 
-# Checking for Java Comments
-for txtFile in txtFiles:
-    f = open(txtFile, 'r+')
-    print(f.read())
+f1 = open("sample_folder/sample.txt", 'w')
+f1.write(file_content)
+
+f1.close()
+
+
+
+# for txtFile in txtFiles:
+#     f = open(txtFile, 'r+')
+#     file_content = str(f.read())
+#     print("File Content : ", str(file_content))
+
+#     # replacing comments with spaces
+#     file_content = remove_comments(file_content)
+#     f.write(file_content)
+
+# f.close()
+
+# # Checking for Java Comments
+# for txtFile in txtFiles:
+#     f = open(txtFile, 'r+')
+#     print(f.read())

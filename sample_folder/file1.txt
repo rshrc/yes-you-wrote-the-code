@@ -1,2 +1,13 @@
 data
 // comment
+/* comment 2 */
+/
+
+
+
+data
+
+/
+
+
+

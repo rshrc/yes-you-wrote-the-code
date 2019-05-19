@@ -1,0 +1,17 @@
+Regular Expression for comments
+
+HTML
+<!--(.*?)-->
+
+Java/C/C++
+//.*|("(?:\\[^"]|\\"|.)*?")|(?s)/\*.*?\*/
+
+Python
+Unknown
+
+Testing
+//
+<!--HTML COMMENT-->
+# 
+"""
+"""
