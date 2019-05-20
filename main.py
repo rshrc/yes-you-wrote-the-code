@@ -1,4 +1,7 @@
 from utils import FileManager
+from parser import get_station_parser
+
+args = get_station_parser()
 
 file_type = input("Enter File Type you want to strip : ")
 
