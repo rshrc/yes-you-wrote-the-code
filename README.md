@@ -29,7 +29,7 @@ Taking pride in other people's work is good karma.
 
 Simply copy paste `main.py` and `utils.py` in the source folder, and execute `main.py`. Let the wizard guide you towards the road of redemption. 
 
-*Things got bugs, gonna smash them one by one * 
+*Things got bugs, gonna smash them one by one* 
 
 
 
